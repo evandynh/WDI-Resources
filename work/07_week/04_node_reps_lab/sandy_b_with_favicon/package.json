@@ -1,0 +1,22 @@
+{
+  "name": "sandy_b",
+  "version": "1.0.0",
+  "description": "My Node app about Sandra Bullock <3",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "keywords": [
+    "Sandra",
+    "Bullock"
+  ],
+  "author": "Kate Wood",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.15.2",
+    "finalhandler": "^1.0.0",
+    "path": "^0.12.7",
+    "serve-favicon": "^2.4.1"
+  }
+}

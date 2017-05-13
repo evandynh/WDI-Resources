@@ -1,0 +1,57 @@
+@import url(http://fonts.googleapis.com/css?family=Lobster);
+@import url(http://fonts.googleapis.com/css?family=Pacifico);
+
+body {
+	background-image: url('../images/background.png');
+	text-align: center;
+	width: 100%;
+/*	font-family: 'Lobster', cursive;
+*/	
+	font-family: 'Pacifico', cursive;
+	border-radius: 25px;
+
+}
+
+#container {
+	width: 1000px;
+	margin: 0 auto;
+
+}
+
+.dashed {
+	border: 2px dashed pink;
+	margin: 10px;
+	padding: 5px;
+	border-radius: 25px;
+
+}
+
+.left-container, .right-container {
+	border: 2px solid lightblue;
+	background-color: white;
+	float: left;
+	width: 440px;
+	margin: 10px;
+	padding: 10px;
+	border-radius: 25px;
+
+}
+
+h1 {
+   -webkit-text-stroke: .03px black;
+   color: white;
+   text-shadow:
+       3px 3px 0 #000,
+     -1px -1px 0 #000,  
+      1px -1px 0 #000,
+      -1px 1px 0 #000,
+       1px 1px 0 #000;
+}
+
+
+
+
+
+
+
+

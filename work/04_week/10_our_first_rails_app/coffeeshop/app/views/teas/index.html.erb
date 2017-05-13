@@ -1,0 +1,12 @@
+<h1>Teas</h1>
+
+<ul>
+  <% @teas.each do |tea| %>
+    <li>
+      <strong><%= tea.name %></strong> - <%= tea.origin %> <%= 'caffeinated' if tea.caffeine %> <%= link_to "More info", tea_path(tea) %>
+    </li>
+  <% end %>
+</ul>
+
+<%= link_to "Add a new tea!", new_tea_path %>
+<%= link_to "Home", root_path %>

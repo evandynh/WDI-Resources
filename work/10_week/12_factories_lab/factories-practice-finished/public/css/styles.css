@@ -1,0 +1,23 @@
+img {
+	display: inline-block;
+	vertical-align: middle;
+}
+
+a {
+	cursor: pointer;
+}
+
+/* Not properly responsive, but it's a start... */
+#profile, #loading {
+	position: fixed;
+	left: 350px;
+	top: 20px;
+}
+
+#loading img {
+	max-width: 200px;
+}
+
+#profile h3 {
+	padding: 0;
+}

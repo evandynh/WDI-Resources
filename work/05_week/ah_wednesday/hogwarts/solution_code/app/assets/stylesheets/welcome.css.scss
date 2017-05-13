@@ -1,0 +1,156 @@
+// Place all the styles related to the welcome controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+@import 'bootstrap';
+@import url(http://fonts.googleapis.com/css?family=Aladin);
+
+body {
+	background-color: white;
+	font-family: 'Aladin', cursive;
+  }
+
+html, body, .container-fluid, .row, .col-md-12 {
+	height: 100%;
+}
+
+	.navbar {
+		margin-bottom: 0px;
+	}
+
+$bgDefault      : #000000;
+$bgHighlight    : #515151;
+$colDefault     : #fffc5d;
+$colHighlight   : #ffffff;
+.navbar-default {
+	background-color: $bgDefault;
+	border-color: $bgHighlight;
+	.navbar-brand {
+		color: $colDefault;
+		&:hover, &:focus { 
+			color: $colHighlight; }}
+	.navbar-text {
+		color: $colDefault; }
+	.navbar-nav {
+		> li {
+			> a {
+				color: $colDefault;
+				&:hover,  &:focus {
+					color: $colHighlight; }}}
+		> .active {
+			> a, > a:hover, > a:focus {
+				color: $colHighlight;
+				background-color: $bgHighlight; }}
+		> .open {
+			> a, > a:hover, > a:focus {
+				color: $colHighlight;
+				background-color: $bgHighlight; }}}
+	.navbar-toggle {
+		border-color: $bgHighlight;
+		&:hover, &:focus {
+			background-color: $bgHighlight; }
+		.icon-bar {
+			background-color: $colDefault; }}
+	.navbar-collapse,
+	.navbar-form {
+		border-color: $colDefault; }
+	.navbar-link {
+		color: $colDefault;
+		&:hover {
+			color: $colHighlight; }}}
+@media (max-width: 767px) {
+	.navbar-default .navbar-nav .open .dropdown-menu {
+		> li > a {
+			color: $colDefault;
+			&:hover, &:focus {
+				color: $colHighlight; }}
+		> .active {
+			> a, > a:hover, > a:focus, {
+				color: $colHighlight;
+				background-color: $bgHighlight; }}}
+}
+
+	.container-fluid {
+
+		.row {
+			text-align: center;
+			padding-top: 60px;
+			background-color: black;
+			color: #ca3;
+			overflow: auto;
+
+			h1 {
+				font-family: 'Aladin', cursive;
+				text-align: center;
+			}
+
+			.hogwarts {
+				width: 600px;
+				margin: 0 auto;
+			}
+
+			.quote {
+				font-style: italic;
+			}
+			.welcome {
+				background-color: black;
+				color: #ca3;	
+			}
+			
+			.harry, .ron, .hermione {
+					height: 100px;
+					width: 100px;
+					background-image: url(HPCharacterSprite.jpg);
+					margin: 50px auto;
+					text-align: center;
+				}
+				.harry {
+					background-position: 200px 0px;
+				}
+				.ron {
+					background-position: 200px 200px;
+				}
+				.hermione {
+					background-position: 200px 100px;
+				}
+			.crest {
+				background: url(HogwartsHouses.png);
+				width: 183px;
+				height: 227px;
+				margin: 0 auto;
+				}
+			.gryffindor {
+				background-position:  -14px -14px;
+			}
+			.hufflepuff {
+				background-position: -15px -249px;
+			}
+			.ravenclaw {
+				background-position: 182px -14px;
+			}
+			.slytherin {
+				background-position: 179px 217px;
+			}
+
+		}
+			.houses {
+				background-color: black;
+				color: #ca3;
+				overflow: scroll;	
+			}
+		.meet {
+		background-color: white;
+		color: black;
+		}
+
+	}
+
+@media (max-width: 991px) {
+	body {
+		margin-top: 26px;
+	}
+	h1 {
+	padding-top: 20px;
+  }
+}
+

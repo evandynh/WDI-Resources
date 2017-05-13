@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <% include ../partials/head %>
+  </head>
+  <body class="container">
+    <h1>New Book</h1>
+    <form action="/books" method="POST">
+      <div class="form-group">
+        <label>Title</label>
+        <input type="text" name="title" placeholder="Title" class="form-control">
+      </div>
+      <div class="form-group">
+        <label>Author:</label>
+        <select name="author" class="form-control">
+          <% authors.forEach(function(author) { %>
+            <option value=<%= author._id%>>
+              <%= author.name %>
+            </option>
+          <% }) %>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Genres:</label>
+        <% genres.forEach(function(genre) { %>
+          <input class="checkbox-inline" type="checkbox" name="genres" value=<%= genre._id %> > <%= genre.name %>
+        <% }) %>
+      </div>
+      <div class="form-group">
+        <input type="submit" value="Add Book" class="btn btn-primary">
+      </div>
+    </form>
+    <% include ../partials/footer %>
+  </body>
+</html>

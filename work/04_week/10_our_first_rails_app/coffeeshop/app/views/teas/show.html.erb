@@ -1,0 +1,15 @@
+<h1><%= @tea.name %></h1>
+
+<p>
+  This is a <%= 'de' unless @tea.caffeine %>caffeinated tea from <%= @tea.origin %>.
+  <% if @tea.looseleaf %>
+    It is looseleaf.
+  <% end %>
+  We have <%= @tea.quantity %> pounds of it.
+</p>
+
+<%= link_to "Edit this tea!", edit_tea_path(@tea) %>
+
+<%= link_to "Delete this tea!", tea_path, method: :delete, data: {confirm: "Are you sure you want to delete this tea?"} %>
+
+<%= link_to "Back to the list!", teas_path %>

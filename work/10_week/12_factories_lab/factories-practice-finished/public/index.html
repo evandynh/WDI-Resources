@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html ng-app="GAPokedex">
+<head>
+	<title>WDI Angular Pokedex!</title>
+	<link rel="stylesheet" type="text/css" href="css/cutestrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/styles.css">
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
+	<script src="/js/app.js"></script>
+	<script src="/js/pokemonFactory.js"></script>
+</head>
+<body ng-controller="PokemonController as pokeCtrl">
+	<div class="wrapper-large">
+		<h1>WDI Pokedex!</h1>
+		<section class="grid">
+			<div class="column--light">
+				<ol>
+					<li ng-repeat="pokemon in pokeCtrl.pokedex">
+						<a ng-click="pokeCtrl.getOnePokemon(pokemon)">{{ pokemon.pokemon_species.name }}</a>
+					</li>
+				</ol>
+			</div>
+
+			<div id="loading" ng-if="pokeCtrl.loading">
+				<img src="/img/pokeballLoader.gif">
+			</div>
+
+			<div id="profile" ng-if="pokeCtrl.selectedPokemon && !pokeCtrl.loading">
+				<h2>
+					<img ng-src="{{pokeCtrl.selectedPokemon.sprites.front_default}}">
+					{{ pokeCtrl.selectedPokemon.name }}
+				</h2>
+				<p>{{pokeCtrl.selectedPokemon.bio}}</p>
+				<h3>Weight: {{ pokeCtrl.selectedPokemon.weight }}</h3>
+				<h3>Height: {{ pokeCtrl.selectedPokemon.height }}</h3>
+				<h3>Base Experience: {{ pokeCtrl.selectedPokemon.base_experience }}</h3>
+				<h3>Abilities:</h3>
+				<ul>
+					<li ng-repeat="ability in pokeCtrl.selectedPokemon.abilities">
+						{{ ability.ability.name }}
+					</li>
+				</ul>
+			</div>
+		</section>
+	</div>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html ng-app="boatsApp">
+<head>
+	<title>Boats, Boats, Boats!</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+	<script src="js/app.js"></script>
+	<script src="js/boatsController.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/1.1.2/ui-bootstrap.js"></script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="css/animate.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+	<nav class="navbar navbar-inverse navbar-fixed-top">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="#">
+					<img class="brand-fit" alt="Kitten" src="http://www.kentuckylemonlaw.com/wp-content/uploads/2014/12/boat.png">
+				</a>
+			</div>
+			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+				<ul class="nav navbar-nav">
+				<li><a href="#">Boats, Boats, Boats!</a></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+	<div class="container main" ng-controller="BoatsController as boatsCtrl">
+		<h3>You have {{boatsCtrl.all.length}} boats left to sell</h3>
+		
+		<form class="form-inline" id='add-boat' ng-submit="boatsCtrl.add()">
+			<label class="sr-only" for="boatsCtrl.newBoat.name">Name</label>
+			<input class="form-control" type="text" placeholder="The boat is named ..." ng-model="boatsCtrl.newBoat.name" />
+			<label class="sr-only" for="boatsCtrl.newBoat.type">Type</label>
+			<input class="form-control" type="text" placeholder="It is a ..." ng-model="boatsCtrl.newBoat.type" />
+			<label class="sr-only" for="boatsCtrl.newBoat.image">Image</label>
+			<input class="form-control" type="text" placeholder="Here's an image (url)..." ng-model="boatsCtrl.newBoat.image" />
+			<label class="sr-only" for="boatsCtrl.newBoat">Submit</label>
+			<input class="btn btn-default" type="submit"/>
+		</form>
+		
+		<div ng-repeat="boat in boatsCtrl.all">
+			<input type="checkbox" ng-model="boat.sold" /><span ng-class="{strike:boat.sold}"> {{boat.type}}: {{boat.name}} </span>
+			<img ng-src="{{boat.image}}" class="boat-image"/>
+		</div>
+	</div>
+</body>
+</html>
+
+
+
+
+
+

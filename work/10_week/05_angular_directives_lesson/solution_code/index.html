@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html ng-app="hintApp">
+  <head>
+    <meta charset="utf-8">
+    <title>Tilda's hints</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/skeleton.css">
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body class="container" ng-controller="HintsController as hintsCtrl">
+
+    <header>
+      <div class="row">
+        <img class="tilda-head three columns" src="http://i.imgur.com/Lk4GzwZ.jpg" alt="tilda">
+        <div class="nine columns">
+          <h1>Advice on this Chaotic Life <span class="sm-header-text">
+            from <a href="https://twitter.com/nottildaswinton">Tilda Swinton</a>
+          </span></h1>
+        </div>
+      </div>
+      <br>
+    </header>
+
+    <div class="image-here">
+      <h5 class="shade">You have <span ng-bind="hintsCtrl.numberToIncorporate()"></span> hints to
+          incorporate into your chaotic life!</h5>
+      <form ng-submit="hintsCtrl.addHint()">
+        <input ng-model="hintsCtrl.newHint.wisdom" id="darken-text" class="shade" type="text" placeholder="But think...">
+      </form>
+      <p class="shade" ng-if="hintsCtrl.newHint.wisdom">About to incorporate hint:
+        <strong>{{hintsCtrl.newHint.wisdom}}</strong>
+      </p>
+      <ul>
+        <li class="hint shade" ng-repeat="hint in hintsCtrl.allHints">
+          <span ng-click="hintsCtrl.changeIncorporated(hint)" ng-class="{'incorporated': hint.incorporated}">
+            {{hint.wisdom}}
+          </span>
+          <button class="destroy" ng-click="hintsCtrl.remove(hint)">X</button>
+        </li>
+      </ul>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/hintsController.js"></script>
+  </body>
+</html>

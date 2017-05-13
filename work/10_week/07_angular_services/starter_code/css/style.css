@@ -1,0 +1,20 @@
+.boat-image {
+	width: 75vw;
+}
+
+.brand-fit {
+	height: inherit;
+}
+
+.main {
+	margin-top: 75px;
+}
+
+.strike {
+    text-decoration: line-through;
+}
+
+.white-center {
+	color: white;
+	text-align: center;
+}

@@ -1,0 +1,80 @@
+@import url(https://fonts.googleapis.com/css?family=Cinzel+Decorative);
+
+/*Use this class with ng-class*/
+
+.incorporated {
+  text-decoration: line-through;
+}
+
+/*You can ignore the rest! This is all just stylin!*/
+
+header {
+  padding-top: 30px;
+}
+
+body {
+  background-color: ghostwhite;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+.tilda-head {
+  border-radius: 8px;
+}
+
+.sm-header-text {
+  font-size: 33px;
+  padding-bottom: 3px;
+  font-weight: normal;
+}
+
+.image-here {
+  background: url('http://www.narniafans.com/wp-content/uploads/2010/06/vdt-narniafans311.jpg');
+  background-position: center center;
+  background-size: cover;
+  padding: 20px;
+  border-radius: 20px;
+  margin-bottom: 40px;
+}
+
+#darken-text {
+  color: black;
+}
+
+.shade {
+  color: ghostwhite;
+  text-shadow: 0px 1px 1px #4d4d4d;
+}
+
+h1 {
+  padding-top: 7%;
+  font-family: Cinzel Decorative, Tacoma, monospace;
+  font-weight: bold;
+  text-shadow: 0px 1px 1px gray;
+}
+
+button.destroy {
+  cursor:     pointer;
+  border:     none;
+  background: none;
+  font-weight: bold;
+  color:       red;
+  transition: 0.25s;
+  opacity:    0.50;
+}
+
+button.destroy:hover {
+  transition: 0.25s;
+  opacity:    1;
+}
+
+.hint {
+  cursor: pointer;
+}
+
+p, li {
+  font-size: 1.1em;
+}

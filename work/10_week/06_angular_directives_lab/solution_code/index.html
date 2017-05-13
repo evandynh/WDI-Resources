@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>COMPLETE Kitties App!</title>
+		<link rel="stylesheet" href="css/style.css">
+	</head>
+	<body ng-app="kittiesApp"> <!-- This is where we use the ng-app directive to auto-bootstrap the Angular app that we named in app.js, kittiesApp. It could also be on the html tag! -->
+		<div id="container" ng-controller="KittiesController as kittiesCtrl"> <!-- This is where we use the ng-controller directive to bring in the controller we constructed in app.js, KittiesController -->
+			<div class="left-container">
+				<h1>Kitties for Adoption</h1>
+				<div class="dashed" ng-repeat="kitty in kittiesCtrl.kittiesList | filter: false"> <!-- Here, we're filtering kitties based on the 'adopted' boolean (looking for 'false'). Only kitties with 'false' present as a value will appear in this column. -->
+					<h2>My name is {{kitty.catName}}</h2> <!-- Displays the cat's name based on the object in kittiesCtrl.kittiesList. -->
+					<p>I am {{kitty.monthsOld}} months old.</p> <!-- Displays the cat's age based on the object in kittiesCtrl.kittiesList -->
+					<p>I am a {{kitty.gender}}.</p> <!-- Displays the cat's gender based on the object in kittiesCtrl.kittiesList. -->
+					<img ng-src={{kitty.image}}> <!-- Displays an image with a path noted in the object in kittiesCtrl.kittiesList. -->
+					<p>Adopt?<input type="checkbox" ng-model="kitty.adopted"></p> <!-- NG-MODEL = The ng-model directive binds the value of HTML controls (input, select, textarea) to application data. Allows user to set boolean value of 'adopted' for this kitty in kittiesCtrl.kittiesList. -->
+				</div>
+			</div>
+
+			<div class="right-container">
+				<h1>At their forever homes <3</h1>
+				<div class="dashed" ng-repeat="kitty in kittiesCtrl.kittiesList | filter: true"> <!-- Here, we're filtering kitties based on the 'adopted' boolean (looking for 'true'). Only kitties with 'true' present as a value will appear in this column. -->
+					<h2>My name is {{kitty.catName}}</h2>
+					<p>I am {{kitty.monthsOld}} months old.</p>
+					<p>I am a {{kitty.gender}}.</p>
+					<img ng-src={{kitty.image}}>
+					<p>Adopted!</p>
+				</div>
+			</div>
+		</div>
+
+<!-- At the bottom so it loads in after the page has been loaded, because the page loads top to bottom -->
+    		<!--Sourcing Angular-->
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+		<!-- Source in module -->
+		<script type="text/javascript" src="js/app.js"></script>
+		<!-- Source in controller -->
+		<script type="text/javascript" src="js/kittiesController.js"></script>
+
+	</body>
+</html>

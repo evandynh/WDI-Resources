@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html ng-app="TheMET">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>The Metropolitan Museum of Art</title>
+		<link rel="stylesheet" href="css/styles.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
+		<script src='js/app.js'></script>
+		<script src='js/donorController.js'></script>
+		<script src='js/exhibitController.js'></script>
+		<script src='js/generalInfoController.js'></script>
+	</head>
+	<body>
+		<h1>The Metropolitan Museum of Art</h1>
+
+		<section id="exhibit" ng-controller="ExhibitController as exhibitCtrl">
+			<h2>Exihibit:</h2>
+			<img ng-src="{{exhibitCtrl.headerImage}}" alt="{{exhibitCtrl.artist}}">
+			<h3>{{exhibitCtrl.title}}</h3>
+			<h4>By {{exhibitCtrl.artist}}</h4>
+		</section>
+
+		<section id="generalInfo" ng-controller="GeneralInfoController as infoCtrl">
+			<h2>General Info:</h2>
+			<h3>Hours:</h3>
+			<ul>
+				<li>
+					<strong> Friday:</strong> {{infoCtrl.hours.Friday}}
+				</li>
+				<li>
+					<strong> Monday:</strong> {{infoCtrl.hours.Monday}}
+				</li>
+				<li>
+					<strong> Saturday:</strong> {{infoCtrl.hours.Saturday}}
+				</li>
+				<li>
+					<strong> Sunday:</strong> {{infoCtrl.hours.Sunday}}
+				</li>
+				<li>
+					<strong> Thursday:</strong> {{infoCtrl.hours.Thursday}}
+				</li>
+				<li>
+					<strong> Tuesday:</strong> {{infoCtrl.hours.Tuesday}}
+				</li>
+				<li>
+					<strong> Wednesday:</strong> {{infoCtrl.hours.Wednesday}}
+				</li>
+			</ul>
+			<h3>Suggested Admission:</h3>
+			<ul>
+				<li>
+					Adults - {{infoCtrl.admission.Adults}}
+				</li>
+				<li>
+					Seniors - {{infoCtrl.admission.Seniors}}
+				</li>
+				<li>
+					Students - {{infoCtrl.admission.Students}}
+				</li>
+			</ul>
+		</section>
+
+		<section id="donor" ng-controller="DonorController as donorCtrl">
+			<h2>Donor Information</h2>
+			<h3>Contact:</h3>
+			<p>
+				<a href="mailto:{{donorCtrl.contact.email}}">{{donorCtrl.contact.email}}</a> • {{donorCtrl.contact.phone}}
+			</p>
+			<h4>Donation Amounts:</h4>
+			<ul>
+				<li>
+					${{donorCtrl.amounts[0]}}
+				</li>
+				<li>
+					${{donorCtrl.amounts[1]}}
+				</li>
+				<li>
+					${{donorCtrl.amounts[2]}}
+				</li>
+				<li>
+					${{donorCtrl.amounts[3]}}
+				</li>
+				<li>
+					${{donorCtrl.amounts[4]}}
+				</li>
+				<li>
+					${{donorCtrl.amounts[5]}}
+				</li>
+			</ul>
+		</section>
+	</body>
+</html>

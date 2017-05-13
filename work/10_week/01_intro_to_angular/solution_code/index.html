@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html ng-app="introToAngularApp">
+	<head>
+		<meta charset="utf-8">
+		<title>Intro to Angular</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+		<script src="./js/app.js"></script>
+		<script src="./js/homeController.js"></script>
+	</head>
+	<body>
+		<section ng-controller="HomeController as homeCtrl">
+			Is irKat awesome? {{homeCtrl.awesome}} It is a {{homeCtrl.irKatDesc}}
+			<ul>
+				<li ng-repeat="irKat in homeCtrl.irKat">
+					Does {{irKat.name}} have a beard? {{irKat.beard}}
+				</li>
+			</ul>
+			<input type="text" ng-model="homeCtrl.myInput">
+			<p>
+				My input is: {{homeCtrl.myInput}}
+			</p>
+		</section>
+	</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <% include ./partials/head %>
+  </head>
+  <body class="container">
+    <h1>The Library</h1>
+    <ul>
+      <% authors.forEach(function(author) { %>
+        <li> <strong><%= author.name %></strong> </li>
+        <ul>
+          <% author.books.forEach(function(book) { %>
+            <li><%= book.title %></li>
+            (<em>
+              <% book.genres.forEach(function(genre) { %>
+                <%= genre.name %>
+              <% }) %>
+            </em>)
+          <% }) %>
+        </ul>
+      <% }) %>
+    </ul>
+
+    <div>
+      <a href="/genres/new" class="btn btn-success"> Add a New Genre </a>
+      <a href="/authors/new" class="btn btn-success"> Add a New Author </a>
+      <a href="/books/new" class="btn btn-success"> Add a New Book </a>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,25 @@
+<%= form_for @tea do |f| %>
+  <div>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+  <div>
+    <%= f.label :origin %>
+    <%= f.text_field :origin %>
+  </div>
+  <div>
+    <%= f.label :caffeine %>
+    <%= f.check_box :caffeine %>
+  </div>
+  <div>
+    <%= f.label :looseleaf %>
+    <%= f.check_box :looseleaf %>
+  </div>
+  <div>
+    <%= f.label :quantity %>
+    <%= f.number_field :quantity %>
+  </div>
+
+  <%= f.submit %>
+
+<% end %>

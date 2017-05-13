@@ -1,0 +1,20 @@
+{
+  "name": "reddit_app",
+  "version": "1.0.0",
+  "description": "A node app to consume the reddit API.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "keywords": [
+    "reddit",
+    "3rd-party"
+  ],
+  "author": "Kate Wood",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.14.0",
+    "request": "^2.78.0"
+  }
+}

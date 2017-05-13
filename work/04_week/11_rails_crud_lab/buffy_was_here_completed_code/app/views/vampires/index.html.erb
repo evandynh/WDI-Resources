@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Vampires</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Age</th>
+      <th>Sire</th>
+      <th>Staked</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @vampires.each do |vampire| %>
+      <tr>
+        <td><%= vampire.name %></td>
+        <td><%= vampire.age %></td>
+        <td><%= vampire.sire %></td>
+        <td><%= vampire.staked %></td>
+        <td><%= link_to 'Show', vampire %></td>
+        <td><%= link_to 'Edit', edit_vampire_path(vampire) %></td>
+        <td><%= link_to 'Destroy', vampire, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Vampire', new_vampire_path %>

@@ -1,0 +1,11 @@
+{
+  "name": "connecting_express_routes_to_mongo_lab",
+  "version": "1.0.0",
+  "description": "starter code for lab",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Kate Wood",
+  "license": "ISC"
+}

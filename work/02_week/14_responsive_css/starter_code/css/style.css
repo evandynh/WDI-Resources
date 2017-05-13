@@ -1,0 +1,29 @@
+div {
+	border: 1px solid black;
+	margin: 2px auto;
+	padding: 2px;
+}
+
+#header {
+	height: 180px;
+}
+
+#content {
+	width: 600px;
+	float: left;
+}
+
+#sidebar {
+	width: 300px;
+	float: right;
+}
+
+#footer {
+	clear: left;
+}
+
+
+
+
+
+

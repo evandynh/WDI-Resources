@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+  <meta charset="UTF-8">
+  <title>AngularJS Filters</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <style>
+    th {color: lightblue; cursor:pointer}
+  </style>
+  <script src="https://code.angularjs.org/1.4.4/angular.min.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/main-controller.js"></script>
+  <script src="js/client-data-service.js"></script>
+</head>
+<body class="container" ng-controller="MainController as vm">
+  <br>
+  <div class="jumbotron text-center"><h1>AngularJS Filters</h1></div>
+  <div class="row">
+    <div class="col-xs-6">
+      <label>City</label>
+      <select class="form-control" ng-model="vm.selectedCity" ng-options="city for city in vm.cities"></select>
+    </div>
+    <div class="col-xs-6">
+      <label>Search</label>
+      <input type="search" class="form-control" ng-model="vm.search" placeholder="search...">
+    </div>
+  </div>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th ng-click="vm.sortBy = 'name'; vm.descending = !vm.descending">Name</th>
+        <th ng-click="vm.sortBy = 'city'; vm.descending = !vm.descending">City</th>
+        <th ng-click="vm.sortBy = 'bio'; vm.descending = !vm.descending">Bio</th>
+        <th ng-click="vm.sortBy = 'date'; vm.descending = !vm.descending">Client Date</th>
+        <th ng-click="vm.sortBy = 'funds'; vm.descending = !vm.descending" class="text-right">Funds</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="client in vm.clients | filter:{city: vm.selectedCity} | filter:vm.search | orderBy:vm.sortBy:vm.descending">
+        <td>{{client.name}}</td>
+        <td>{{client.city | uppercase}}</td>
+        <td>{{client.bio}}</td>
+        <td>{{client.date | date:'MM/dd/yyyy'}}</td>
+        <td class="text-right">{{client.funds | currency:'$':0}}</td>
+      </tr>
+    </tbody>
+  </table>
+</body>
+</html>

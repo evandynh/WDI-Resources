@@ -1,0 +1,34 @@
+<%= form_for(@vampire) do |f| %>
+  <!-- This just deals with errors - don't worry about it for now! -->
+  <% if @vampire.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@vampire.errors.count, "error") %> prohibited this vampire from being saved:</h2>
+
+      <ul>
+      <% @vampire.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <!-- add a text field for name -->
+  </div>
+  <div class="field">
+    <%= f.label :age %><br>
+    <!-- add a number field for age -->
+  </div>
+  <div class="field">
+    <%= f.label :sire %><br>
+    <!-- add a text field for sire -->
+  </div>
+  <div class="field">
+    <%= f.label :staked %><br>
+    <!-- add a check box for staked (boolean) -->
+  </div>
+  <div class="actions">
+    <!-- add a submit button -->
+  </div>
+<% end %>
